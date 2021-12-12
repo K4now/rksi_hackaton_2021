@@ -21,29 +21,34 @@ class HomePage extends StatelessWidget {
 
   List<BasketItem> basketItem = [
     BasketItem(
+        index: "001",
         name: "Stul1",
         price: 25.5,
         description: "Обычный стул",
         imageUrl:
             "https://avatars.mds.yandex.net/get-mpic/4289990/img_id4505815381297457684.jpeg/orig"),
     BasketItem(
+        index: "002",
         name: "Stul2",
         price: 30,
         description: "Хуета какая-та",
         imageUrl:
             "https://avatars.mds.yandex.net/get-mpic/3916156/img_id1578111255684523668.jpeg/orig"),
     BasketItem(
+        index: "003",
         name: "Stul3",
         price: 25.5,
         description: "Третий стул",
         imageUrl:
             "https://avatars.mds.yandex.net/get-mpic/4585707/img_id6179979996928432799.jpeg/orig"),
     BasketItem(
+        index: "004",
         name: "Stul1",
         price: 25.5,
         imageUrl:
             "https://avatars.mds.yandex.net/get-marketpic/5607353/pic31e6d7b60c07b3cb70921b01e65077a4/orig"),
     BasketItem(
+        index: "005",
         name: "Stul1",
         price: 25.5,
         imageUrl:
@@ -288,7 +293,7 @@ class HomePage extends StatelessWidget {
                 GestureDetector(
                     //Кнопка
                     onTap: () {
-                      provBasket.addItemBasket(listB[0]);
+                      provBasket.addItemBasket(listB[index]);
                       // print("${index} object");
                     },
                     child: Container(

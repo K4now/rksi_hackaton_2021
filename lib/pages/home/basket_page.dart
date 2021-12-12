@@ -9,10 +9,26 @@ import 'package:rksi_hackaton_2021/provider/provider.dart';
 import 'package:rksi_hackaton_2021/pages/home/basket_page.dart';
 
 class BasketHome extends StatelessWidget {
-  const BasketHome({Key? key}) : super(key: key);
-
+  late Basket provBasket;
   @override
   Widget build(BuildContext context) {
-    return Container();
+    provBasket = Provider.of<Basket>(context);
+    return ChangeNotifierProvider<Basket>(
+        create: (_) => Basket(),
+        builder: (context, snapshot) {
+          return Container(
+            child: ListView.builder(
+                itemCount: provBasket.itemsBasket.length,
+                itemBuilder: (context, index) {
+                  return _widgetItem(provBasket.itemsBasket[index]);
+                }),
+          );
+        });
+  }
+
+  _widgetItem(BasketItem basketItem) {
+    return Container(
+      child: Text(basketItem.name.toString()),
+    );
   }
 }

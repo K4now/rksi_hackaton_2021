@@ -1,10 +1,13 @@
 class BasketItem {
   BasketItem(
-      {required this.name,
+      {required this.index,
+      required this.name,
       required this.price,
       this.description,
       this.imageUrl});
 
+  //Индекс товара
+  String index;
   ///Название товара
   String name;
 
